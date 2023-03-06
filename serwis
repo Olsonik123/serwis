@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Osoba
+    {
+        public string imie;
+        public string nazwisko;
+    }
+
+    class Serwisant : Osoba
+    {
+        public int id_serwisanta;
+    }
+    class Opiekun : Osoba
+    {
+        public int id_opiekuna;
+    }
+    
+    class Klient : Osoba
+    {
+        private int pesel;
+        public int id_klienta;
+    }
+    class Urzadzenie
+    {
+        public string marka { get; set; }
+        public string model { get; set; }
+    }
+    class Zlecenie
+    {
+        public int nr_zlecenia;
+        public Urzadzenie urzadzenie;
+    }
+    class naprawa
+    {
+
+    }
+   
+    class PC : Urzadzenie
+    {
+        public string rodzaj_obudowy;
+    }
+    class Laptop : Urzadzenie
+    {
+        private string kolor;
+        public double dlug_przekatnej { get; set; }
+        public string kolor_ob;
+        public string getkolor()
+        {
+            return this.kolor;
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Laptop lap = new Laptop();
+            Console.WriteLine("podaj markę");
+            lap.marka = Console.ReadLine();
+        }
+
+    }
+}
